@@ -13,7 +13,7 @@ L'application propose une interface web élégante avec 3 modules principaux acc
 - Recherche simultanée sur LinkedIn, Indeed, Glassdoor, Monster
 - Analyse et classement intelligent des résultats
 
-- ![Interface principale](screenshots/main-interface.png)
+- ![Interface principale](searchjob.JPG)
 
 ### 📄 **Générateur de CV Optimisé ATS**
 - Upload de CV par glisser-déposer (PDF, DOCX, TXT)
@@ -21,7 +21,7 @@ L'application propose une interface web élégante avec 3 modules principaux acc
 - Personnalisation automatique basée sur l'offre d'emploi
 - Export en code LaTeX compatible Overleaf
 
-- ![Interface principale](screenshots/main-interface.png)
+- ![Interface principale](cv genrateur.JPG)
 
 ### 💌 **Générateur de Lettre de Motivation**
 - Upload de CV/profil pour analyse du background
@@ -29,7 +29,7 @@ L'application propose une interface web élégante avec 3 modules principaux acc
 - Zone pour informations sur l'entreprise (valeurs, projets récents)
 - Rédaction personnalisée et professionnelle
 
-- ![Interface principale](screenshots/main-interface.png)
+- ![Interface principale](lettre motivation genration.JPG)
 
 ## 🚀 Caractéristiques Principales
 

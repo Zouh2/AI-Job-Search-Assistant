@@ -21,7 +21,7 @@ L'application propose une interface web élégante avec 3 modules principaux acc
 - Personnalisation automatique basée sur l'offre d'emploi
 - Export en code LaTeX compatible Overleaf
 
-- ![Interface principale](cv genrateur.JPG)
+- ![Interface principale](cvgenrateur.JPG)
 
 ### 💌 **Générateur de Lettre de Motivation**
 - Upload de CV/profil pour analyse du background
@@ -29,7 +29,7 @@ L'application propose une interface web élégante avec 3 modules principaux acc
 - Zone pour informations sur l'entreprise (valeurs, projets récents)
 - Rédaction personnalisée et professionnelle
 
-- ![Interface principale](lettre motivation genration.JPG)
+- ![Interface principale](lettremotivationgenration.JPG)
 
 ## 🚀 Caractéristiques Principales
 

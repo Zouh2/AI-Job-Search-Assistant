@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Job Search Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-robot"></i> AI Job Search Assistant</h1>
+            <p>Votre assistant IA pour la recherche d'emploi intelligente</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="job-search">
+                <i class="fas fa-search"></i> Recherche d'Emploi
+            </button>
+            <button class="tab-btn" data-tab="cv-generator">
+                <i class="fas fa-file-alt"></i> Générateur CV
+            </button>
+            <button class="tab-btn" data-tab="cover-letter">
+                <i class="fas fa-envelope"></i> Lettre de Motivation
+            </button>
+        </nav>
+
+        <!-- Job Search Tab -->
+        <div id="job-search" class="tab-content active">
+            <div class="card">
+                <h2><i class="fas fa-search"></i> Recherche d'Emploi Intelligente</h2>
+                <form id="job-search-form">
+                    <div class="form-group">
+                        <label for="job-title">Titre du Poste *</label>
+                        <input type="text" id="job-title" name="job_title" required 
+                               placeholder="Ex: Développeur Full Stack, Data Scientist...">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="location">Localisation</label>
+                            <input type="text" id="location" name="location" 
+                                   placeholder="Ex: Paris, Remote, France...">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience-level">Niveau d'Expérience</label>
+                            <select id="experience-level" name="experience_level">
+                                <option value="">Tous niveaux</option>
+                                <option value="junior">Junior (0-2 ans)</option>
+                                <option value="mid">Intermédiaire (2-5 ans)</option>
+                                <option value="senior">Senior (5+ ans)</option>
+                                <option value="lead">Lead/Manager</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skills">Compétences Clés</label>
+                        <textarea id="skills" name="skills" rows="3" 
+                                  placeholder="Ex: Python, React, Machine Learning, AWS..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Rechercher des Emplois
+                    </button>
+                </form>
+                
+                <div id="job-results" class="results-section" style="display: none;">
+                    <h3>Résultats de Recherche</h3>
+                    <div id="job-results-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV Generator Tab -->
+        <div id="cv-generator" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-file-alt"></i> Générateur de CV Optimisé ATS</h2>
+                <form id="cv-generator-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="cv-upload">CV Original</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="cv-upload" name="cv_file" 
+                                   accept=".pdf,.docx,.txt" class="file-input">
+                            <div class="file-upload-text">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Glissez votre CV ici ou cliquez pour sélectionner</p>
+                                <small>Formats supportés: PDF, DOCX, TXT</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="job-description-cv">Description du Poste Ciblé *</label>
+                        <textarea id="job-description-cv" name="job_description" rows="6" required
+                                  placeholder="Collez ici la description complète du poste pour lequel vous postulez..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="personal-info">Informations Personnelles (Optionnel)</label>
+                        <textarea id="personal-info" name="personal_info" rows="4"
+                                  placeholder="Ajoutez des informations supplémentaires à mettre en avant..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-magic"></i> Générer CV Optimisé
+                    </button>
+                </form>
+                
+                <div id="cv-results" class="results-section" style="display: none;">
+                    <h3>CV Généré</h3>
+                    <div class="result-actions">
+                        <button id="download-latex" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Télécharger LaTeX
+                        </button>
+                        <button id="copy-latex" class="btn btn-secondary">
+                            <i class="fas fa-copy"></i> Copier le Code
+                        </button>
+                    </div>
+                    <div id="cv-results-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cover Letter Tab -->
+        <div id="cover-letter" class="tab-content">
+            <div class="card">
+                <h2><i class="fas fa-envelope"></i> Générateur de Lettre de Motivation</h2>
+                <form id="cover-letter-form" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="cv-upload-letter">CV/Profil</label>
+                        <div class="file-upload-area">
+                            <input type="file" id="cv-upload-letter" name="cv_file" 
+                                   accept=".pdf,.docx,.txt" class="file-input">
+                            <div class="file-upload-text">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Glissez votre CV ici ou cliquez pour sélectionner</p>
+                                <small>Formats supportés: PDF, DOCX, TXT</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="job-description-letter">Description du Poste *</label>
+                        <textarea id="job-description-letter" name="job_description" rows="6" required
+                                  placeholder="Collez ici la description complète du poste..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company-info">Informations sur l'Entreprise</label>
+                        <textarea id="company-info" name="company_info" rows="4"
+                                  placeholder="Informations sur l'entreprise, ses valeurs, projets récents..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-pen"></i> Générer Lettre de Motivation
+                    </button>
+                </form>
+                
+                <div id="letter-results" class="results-section" style="display: none;">
+                    <h3>Lettre de Motivation Générée</h3>
+                    <div class="result-actions">
+                        <button id="copy-letter" class="btn btn-secondary">
+                            <i class="fas fa-copy"></i> Copier la Lettre
+                        </button>
+                        <button id="download-letter" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Télécharger PDF
+                        </button>
+                    </div>
+                    <div id="letter-results-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-robot fa-spin"></i>
+            <p>L'IA travaille sur votre demande...</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

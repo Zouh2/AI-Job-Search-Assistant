@@ -1,165 +1,180 @@
-# AI Job Search Assistant
+# 🤖 AI Job Search Assistant
+**Votre assistant IA pour la recherche d'emploi intelligente**
 
-Un système complet de 3 agents IA pour optimiser votre recherche d'emploi, utilisant l'**API Google Gemini** et la bibliothèque Agno.
+Un système complet de 3 agents IA pour optimiser votre recherche d'emploi, utilisant l'**API Google Gemini** et une interface web moderne et intuitive.
 
-## 🤖 Agents IA
+## ✨ Aperçu de l'Interface
 
-### 1. Agent de Recherche d'Emploi
-- Recherche sur LinkedIn, Indeed, Glassdoor, Monster, etc.
-- Analyse et filtrage intelligent des offres
-- Classement par pertinence
-- Extraction des informations clés
+L'application propose une interface web élégante avec 3 modules principaux accessibles via des onglets :
 
-### 2. Agent Générateur de CV
-- Personnalisation basée sur l'offre d'emploi
-- Optimisation pour les systèmes ATS
-- Génération de code LaTeX pour Overleaf
-- Adaptation des mots-clés stratégiques
+### 🔍 **Recherche d'Emploi Intelligente**
+- Interface de recherche avancée avec filtres multiples
+- Champs : Titre du poste, Localisation, Niveau d'expérience, Compétences clés
+- Recherche simultanée sur LinkedIn, Indeed, Glassdoor, Monster
+- Analyse et classement intelligent des résultats
 
-### 3. Agent Lettre de Motivation
+- ![Interface principale](screenshots/main-interface.png)
+
+### 📄 **Générateur de CV Optimisé ATS**
+- Upload de CV par glisser-déposer (PDF, DOCX, TXT)
+- Zone de saisie pour la description du poste cible
+- Personnalisation automatique basée sur l'offre d'emploi
+- Export en code LaTeX compatible Overleaf
+
+- ![Interface principale](screenshots/main-interface.png)
+
+### 💌 **Générateur de Lettre de Motivation**
+- Upload de CV/profil pour analyse du background
+- Saisie de la description complète du poste
+- Zone pour informations sur l'entreprise (valeurs, projets récents)
 - Rédaction personnalisée et professionnelle
-- Recherche sur l'entreprise
-- Adaptation au poste et à la culture d'entreprise
-- Techniques de persuasion avancées
 
-## 🚀 Installation
+- ![Interface principale](screenshots/main-interface.png)
+
+## 🚀 Caractéristiques Principales
+
+### Interface Moderne
+- **Design responsive** : S'adapte à tous les écrans (desktop, tablette, mobile)
+- **Interface intuitive** : Navigation par onglets claire et ergonomique
+- **Upload drag & drop** : Glisser-déposer vos fichiers facilement
+- **Feedback visuel** : Messages de statut et indicateurs de progression
+
+### IA Avancée avec Google Gemini
+- **Analyse contextuelle** : Compréhension approfondie des offres d'emploi
+- **Personnalisation intelligente** : Adaptation automatique du contenu
+- **Optimisation ATS** : CV formatés pour passer les filtres automatiques
+- **Recherche d'entreprise** : Informations contextuelles pour les lettres
+
+## 🛠️ Installation et Configuration
+
+### Prérequis
+- Python 3.8+
+- Clé API Google Gemini
+- Navigateur web moderne
+
+### Installation Rapide
 
 1. **Cloner le repository**
-\`\`\`bash
+```bash
 git clone <repository-url>
-cd job-search-ai-agents
-\`\`\`
+cd ai-job-search-assistant
+```
 
 2. **Installer les dépendances**
-\`\`\`bash
+```bash
 pip install -r requirements.txt
-\`\`\`
+```
 
-3. **Configuration Google Gemini API**
-\`\`\`bash
+3. **Configuration de l'API**
+```bash
 cp .env.example .env
 # Éditer .env avec votre clé API Google Gemini
-\`\`\`
+```
 
-4. **Lancer l'application**
-\`\`\`bash
-# Version avec Agno
+4. **Démarrer l'application**
+```bash
 python app.py
-
-# Ou version directe avec Google Gemini API
-python app_gemini_direct.py
-\`\`\`
+```
 
 5. **Accéder à l'interface**
-Ouvrir http://localhost:5000 dans votre navigateur
+Ouvrir http://127.0.0.1:5000 dans votre navigateur
 
-## 🔧 Configuration
+### Configuration Google Gemini API
 
-### API Google Gemini
-1. Aller sur https://makersuite.google.com/app/apikey
-2. Créer une nouvelle clé API
-3. Ajouter la clé dans le fichier `.env` :
-   \`\`\`
+1. Rendez-vous sur [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Créez une nouvelle clé API
+3. Ajoutez la clé dans votre fichier `.env` :
+   ```env
    GOOGLE_API_KEY=your_google_gemini_api_key_here
-   \`\`\`
+   ```
 
-### Modèles Disponibles
-- **gemini-1.5-pro** : Modèle le plus avancé (recommandé)
-- **gemini-1.5-flash** : Plus rapide, moins de tokens
-- **gemini-pro** : Version standard
+## 🎯 Guide d'Utilisation
 
-## 💡 Utilisation
+### 🔍 Module Recherche d'Emploi
 
-### Recherche d'Emploi
-1. Saisir le titre du poste recherché
-2. Spécifier la localisation et le niveau d'expérience
-3. Ajouter les compétences clés
-4. Lancer la recherche intelligente
+1. **Titre du Poste** : Saisissez le poste recherché (ex: "Développeur Full Stack, Data Scientist...")
+2. **Localisation** : Précisez la zone géographique (ex: "Paris, Remote, France...")
+3. **Niveau d'Expérience** : Sélectionnez dans le menu déroulant
+4. **Compétences Clés** : Listez vos technologies/compétences principales
+5. Cliquez sur **"Rechercher des Emplois"**
 
-### Génération de CV
-1. Uploader votre CV original
-2. Coller la description du poste ciblé
-3. Ajouter des informations personnelles (optionnel)
-4. Générer le CV optimisé ATS
-5. Télécharger le code LaTeX pour Overleaf
+### 📄 Module Générateur de CV
 
-### Lettre de Motivation
-1. Uploader votre CV/profil
-2. Coller la description du poste
-3. Ajouter des informations sur l'entreprise
-4. Générer la lettre personnalisée
-5. Copier ou télécharger le résultat
+1. **Upload CV Original** : 
+   - Glissez-déposez votre CV actuel
+   - Formats supportés : PDF, DOCX, TXT
+2. **Description du Poste** : Collez l'annonce complète du poste ciblé
+3. **Informations Personnelles** (optionnel) : Ajoutez des détails supplémentaires
+4. Cliquez sur **"Générer CV Optimisé"**
+5. **Téléchargement** : Récupérez le code LaTeX pour Overleaf
 
-## 🎯 Fonctionnalités
+### 💌 Module Lettre de Motivation
 
-- **Interface moderne et responsive**
-- **Upload par glisser-déposer**
-- **Génération en temps réel**
-- **Optimisation ATS automatique**
-- **Export LaTeX pour Overleaf**
-- **Copie en un clic**
-- **Messages de statut informatifs**
+1. **Upload CV/Profil** : Votre CV pour analyser votre background
+2. **Description du Poste** : L'annonce complète pour adaptation
+3. **Informations Entreprise** : Valeurs, projets récents, culture d'entreprise
+4. Cliquez sur **"Générer Lettre de Motivation"**
+5. **Copie/Export** : Copiez le texte ou exportez en document
 
-## 🔍 Optimisation ATS
+## ⚙️ Architecture Technique
 
-Le système génère des CV optimisés pour les systèmes de suivi des candidatures (ATS) :
-- Format machine-readable
-- Mots-clés stratégiques
-- Structure standardisée
-- Sections bien définies
-- Évitement des éléments graphiques complexes
+### Structure du Projet
+```
+ai-job-search-assistant/
+├── 📁 agents/                    # Agents IA spécialisés
+│   ├── job_search_agent.py      # Recherche d'emploi
+│   ├── cv_generator_agent.py    # Génération de CV
+│   └── cover_letter_agent.py    # Lettres de motivation
+├── 📁 static/                   # Ressources frontend
+│   ├── 📁 css/
+│   │   └── style.css           # Styles de l'interface
+│   ├── 📁 js/
+│   │   └── script.js           # Logique frontend
+│   └── 📁 uploads/             # Fichiers uploadés
+├── 📁 templates/               # Templates HTML
+│   └── index.html              # Interface principale
+├── 📄 app.py                   # Application Flask
+├── 📄 requirements.txt         # Dépendances Python
+├── 📄 .env.example            # Template configuration
+└── 📄 README.md               # Documentation
+```
 
-## 📱 Interface Responsive
+### Stack Technologique
+- **Backend** : Flask (Python), Google Gemini API
+- **Frontend** : HTML5, CSS3, JavaScript vanilla
+- **Upload** : File API, Drag & Drop
+- **Export** : LaTeX, PDF, TXT
+- **Styling** : CSS moderne avec gradients et animations
 
-L'interface s'adapte automatiquement à tous les écrans :
-- Desktop
-- Tablette
-- Mobile
+## 🎨 Fonctionnalités de l'Interface
 
-## 🛠️ Technologies
+### Design Responsive
+- **Gradients dynamiques** : Interface colorée et moderne
+- **Animations fluides** : Transitions et effets visuels
+- **Icônes intuitives** : Navigation claire avec pictogrammes
+- **Mobile-first** : Optimisé pour tous les appareils
 
-- **Backend**: Flask, Python
-- **Frontend**: HTML5, CSS3, JavaScript
-- **IA**: Google Gemini via Agno
-- **Upload**: Drag & Drop, File API
-- **Export**: LaTeX, PDF
+### Expérience Utilisateur
+- **Upload visuel** : Zone de drop avec feedback instantané
+- **Messages d'état** : Informations de progression en temps réel
+- **Validation des champs** : Vérification automatique des saisies
+- **Copie en un clic** : Boutons de copie rapide intégrés
 
-## 📄 Structure du Projet
+## 🔧 Optimisations ATS
 
-\`\`\`
-job-search-ai-agents/
-├── agents/
-│   ├── job_search_agent.py
-│   ├── cv_generator_agent.py
-│   └── cover_letter_agent.py
-├── static/
-│   ├── css/style.css
-│   └── js/script.js
-├── templates/
-│   └── index.html
-├── app.py
-├── app_gemini_direct.py
-├── requirements.txt
-├── .env.example
-└── README.md
-\`\`\`
+Le générateur de CV produit des documents optimisés pour les systèmes de suivi des candidatures :
 
-## 🤝 Contribution
+- **Format standardisé** : Structure reconnue par les ATS
+- **Mots-clés stratégiques** : Intégration automatique des termes de l'offre
+- **Sections claires** : Organisation logique et lisible
+- **Évitement des éléments problématiques** : Pas de graphiques complexes
+- **Code LaTeX propre** : Compatible avec Overleaf et autres éditeurs
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
-- Signaler des bugs
-- Proposer des améliorations
-- Ajouter de nouvelles fonctionnalités
+## 📊 Modèles IA Disponibles
 
-## 📞 Support
+- **gemini-1.5-pro** : Modèle le plus avancé (recommandé pour la production)
+- **gemini-1.5-flash** : Version rapide pour les tests
+- **gemini-pro** : Version standard pour usage quotidien
+---
 
-Pour toute question ou problème, créez une issue sur le repository.
-
-## 💡 Avantages de Google Gemini
-
-- **Multimodal** : Traite texte, images, code
-- **Context long** : Jusqu'à 1M tokens
-- **Gratuit** : Quota généreux gratuit
-- **Rapide** : Réponses ultra-rapides
-- **Précis** : Excellente compréhension du contexte
-"# AI-Job-Search-Assistant" 
+**Développé avec ❤️ pour optimiser votre recherche d'emploi grâce à l'IA**
